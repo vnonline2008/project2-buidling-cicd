@@ -14,7 +14,7 @@ variables:
   webAppName: 'udacity-project2-cicd'
 
   # Agent VM image name
-  vmImageName: 'tungtt44-agent'
+  agentPool: 'tungtt44-agent'
 
   # Environment name
   environmentName: 'udacity-project2-cicd'
@@ -31,7 +31,7 @@ stages:
   jobs:
   - job: BuildJob
     pool:
-      vmImage: $(vmImageName)
+      name: $(agentPool)
     steps:
     - task: UsePythonVersion@0
       inputs:
@@ -67,7 +67,7 @@ stages:
   jobs:
   - deployment: DeploymentJob
     pool:
-      vmImage: $(vmImageName)
+      name: $(agentPool)
     environment: $(environmentName)
     strategy:
       runOnce:
