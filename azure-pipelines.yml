@@ -14,7 +14,7 @@ variables:
   webAppName: 'udacity-project2-cicd'
 
   # Agent VM image name
-  vmImageName: 'ubuntu-latest'
+  vmImageName: 'tungtt44-agent'
 
   # Environment name
   environmentName: 'udacity-project2-cicd'
