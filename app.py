@@ -45,7 +45,7 @@ def predict():
         return "Model not loaded"
     except Exception as e:
         traceback.print_exc()
-        raise Exception(e)
+        raise Exception(e) from e
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000, debug=True)

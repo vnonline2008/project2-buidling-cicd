@@ -8,7 +8,7 @@ cd project2-buidling-cicd
 make all
 
 # deploy to webapp (using ypthon 3.9 to avoid version conflicts of dependencies)
-az webapp up --name udacity-project2-cicd --resource-group tungtt44-project2-cicd --location eastus --runtime "PYTHON|3.9" --sku B3
+az webapp up --name udacity-project2-cicd --resource-group tungtt44-project2-cicd --location eastus --runtime "PYTHON|3.9" --sku B1
 
 # making prediction in azure webapp
 source make_predict_azure_app.sh
