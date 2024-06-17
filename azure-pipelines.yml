@@ -25,6 +25,8 @@ variables:
   # Python version: 3.9
   pythonVersion: '3.9'
 
+pool: $(agentPool)
+
 stages:
 - stage: Build
   displayName: Build stage
@@ -33,12 +35,15 @@ stages:
     pool:
       name: $(agentPool)
     steps:
-    - task: UsePythonVersion@0
-      inputs:
-        versionSpec: '$(pythonVersion)'
-      displayName: 'Use Python $(pythonVersion)'
+    # - task: UsePythonVersion@0
+    #   inputs:
+    #     versionSpec: '$(pythonVersion)'
+    #   displayName: 'Use Python $(pythonVersion)'
 
     - script: |
+        python3 --version
+        pip --version
+        python --version
         python -m venv antenv
         source antenv/bin/activate
         python -m pip install --upgrade pip
