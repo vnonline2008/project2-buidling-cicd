@@ -41,12 +41,11 @@ stages:
     #   displayName: 'Use Python $(pythonVersion)'
 
     - script: |
-        python3 --version
+        python3.9 --version
         pip --version
-        python --version
-        python -m venv antenv
+        python3.9 -m venv antenv
         source antenv/bin/activate
-        python -m pip install --upgrade pip
+        python3.9 -m pip install --upgrade pip
         pip install setup
         pip install -r requirements.txt
       workingDirectory: $(projectRoot)
@@ -79,10 +78,10 @@ stages:
         deploy:
           steps:
 
-          - task: UsePythonVersion@0
-            inputs:
-              versionSpec: '$(pythonVersion)'
-            displayName: 'Use Python version'
+          # - task: UsePythonVersion@0
+          #   inputs:
+          #     versionSpec: '$(pythonVersion)'
+          #   displayName: 'Use Python version'
 
           - task: AzureWebApp@1
             displayName: 'Deploy Azure Web App : udacity-project2-cicd'
