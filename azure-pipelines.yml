@@ -35,11 +35,6 @@ stages:
     pool:
       name: $(agentPool)
     steps:
-    # - task: UsePythonVersion@0
-    #   inputs:
-    #     versionSpec: '$(pythonVersion)'
-    #   displayName: 'Use Python $(pythonVersion)'
-
     - script: |
         python3.9 --version
         pip --version
@@ -77,12 +72,6 @@ stages:
       runOnce:
         deploy:
           steps:
-
-          # - task: UsePythonVersion@0
-          #   inputs:
-          #     versionSpec: '$(pythonVersion)'
-          #   displayName: 'Use Python version'
-
           - task: AzureWebApp@1
             displayName: 'Deploy Azure Web App : udacity-project2-cicd'
             inputs:
