@@ -6,6 +6,7 @@ This project is showing how I can build CI/CD, integrate with Azure service such
 ## Project Plan
 
 * A link to a Trello board: [Trello board](https://trello.com/b/39HkYJsU/udacity-project2)
+![Trello-board](./screenshot/trello-board.png)
 * The original plan: [Original project plan](./project-plan/original-plan.xlsx)
 * The final plan: [Final project plan](./project-plan/final-plan.xlsx)
 
